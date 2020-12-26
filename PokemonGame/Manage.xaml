@@ -1,0 +1,47 @@
+﻿<Window x:Class="PokemonGame.Manage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonGame"
+        mc:Ignorable="d"
+        Title="Manage" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="ManageCanvas" HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="792" Background="#FFB9FBE0" >
+            <Image x:Name="ManageBackground" Height="419" Width="699"/>
+            <Button Content="Done" Width="51" Canvas.Left="741" Click="Done_Button_Click" Height="86"/>
+            <Button Content="Sell" Width="75" Canvas.Top="352" Click="Sell_Button_Click" Canvas.Left="10"/>
+            <Button Content="Evolve" Width="75" Canvas.Top="371" Click="Evolve_Button_Click" Canvas.Left="10"/>
+            <Button Content="Powerup" Width="75" Canvas.Top="390" Click="Powerup_Button_Click" Canvas.Left="10"/>
+            <Button x:Name="NameButton" Content="Name" Width="75" Canvas.Top="333" Click="Name_Button_Click" Canvas.Left="10"/>
+            <WrapPanel x:Name="PokemonsPanel" Height="92" Width="437" Canvas.Top="177" Canvas.Left="138">
+                <Button Content="PokemonSlot1" Width="85" Height="85" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="PokemonSlot2" Width="85" Height="85" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="PokemonSlot3" Width="85" Height="85" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="PokemonSlot4" Width="85" Height="85" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="PokemonSlot5" Width="85" Height="85" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+            </WrapPanel>
+            <TextBlock x:Name="Textblock" TextWrapping="Wrap" Canvas.Left="575" Canvas.Top="185" Height="234" Width="217" Background="#FF50C1C1" FontSize="24"><Run Text="TextBlock"/></TextBlock>
+            <TextBox  Width="111"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="NameBox" Canvas.Top="316" Canvas.Left="10"/>
+            <TextBlock IsHitTestVisible="False" Text="Enter a new name" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="DarkGray" Canvas.Top="316" Canvas.Left="10">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=NameBox}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <WrapPanel x:Name="PotionsPanel" Height="92" Width="437" Canvas.Top="274" Canvas.Left="172">
+                <Button Content="EmptySlot" Width="60" Height="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="EmptySlot" Width="60" Height="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="EmptySlot" Width="60" Height="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="EmptySlot" Width="60" Height="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+                <Button Content="EmptySlot" Width="60" Height="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False" />
+            </WrapPanel>
+        </Canvas>
+    </Grid>
+</Window>

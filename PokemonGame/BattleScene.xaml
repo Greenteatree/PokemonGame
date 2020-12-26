@@ -1,0 +1,46 @@
+﻿<Window x:Class="PokemonGame.BattleScene"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonGame"
+        mc:Ignorable="d"
+        Title="BattleScene" Height="523" Width="961">
+    <Grid Height="493" VerticalAlignment="Top">
+        <Canvas HorizontalAlignment="Left" Width="953" Background="#FFEDF0E6">
+            <Image x:Name="Background" Height="419" Width="492" Canvas.Left="140"/>
+            <TextBlock x:Name="BattleState" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="296" Width="315" Background="#FF4C92C3" Canvas.Left="637" Canvas.Top="187"><Run Text="Battle State"/></TextBlock>
+            <Canvas x:Name="Pokemon1_Canvas" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="266" Canvas.Top="296">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Background="#FF6FB250" Canvas.Top="-15"><Run Background="#FFA3EA7B" Text="Pokemon1"/></TextBlock>
+                <Image x:Name="Pokemon1_Image" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+            </Canvas>
+            <Canvas x:Name="Pokemon2_Canvas" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Canvas.Left="481" Canvas.Top="103">
+                <TextBlock TextWrapping="Wrap" Height="16" Width="100" Background="#FF833D3D" Canvas.Top="-16"><Run Background="#FFE65959" Text="Pokemon2"/></TextBlock>
+                <Image x:Name="Pokemon2_Image" Height="100" Width="100"/>
+            </Canvas>
+            <WrapPanel x:Name="SkillsPanel" HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="163" Canvas.Left="10" Canvas.Top="249">
+                <Button Content="EmptySkills" Height="80" Width="80" IsEnabled="False"/>
+                <Button Content="EmptySkills" Height="80" Width="80" IsEnabled="False"/>
+                <Button Content="EmptySkills" Height="80" Width="80" IsEnabled="False"/>
+                <Button Content="EmptySkills" Height="80" Width="80" IsEnabled="False"/>
+            </WrapPanel>
+            <WrapPanel x:Name="PotionsPanel" Canvas.Left="632" Width="311" Height="82">
+                <Button Content="EmptySlot" Height="60" Width="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False"/>
+                <Button Content="EmptySlot" Height="60" Width="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False"/>
+                <Button Content="EmptySlot" Height="60" Width="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False"/>
+                <Button Content="EmptySlot" Height="60" Width="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False"/>
+                <Button Content="EmptySlot" Height="60" Width="60" Background="{x:Null}" BorderThickness="0" IsEnabled="False"/>
+            </WrapPanel>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="32" Canvas.Left="10" Canvas.Top="167"><Run Text="Choose a target"/><LineBreak/><Run Text="Player      AI"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="92" Width="164"><Run Text="First choose a skill/potion, then choose a target."/><LineBreak/><Run Text="If player win the battle, pokemon1 will get more exp."/></TextBlock>
+            <TextBlock x:Name="ChoosingStatus" TextWrapping="Wrap" Text="Current choosing:" Height="74" Width="316" Canvas.Left="637" Canvas.Top="113" FontSize="16"/>
+            <Button Content="Attack" Width="100" Canvas.Left="10" Canvas.Top="113" Height="54" Click="Attack_Button_Click"/>
+            <WrapPanel x:Name="TargetPanel" Height="45" Width="100" Canvas.Left="10" Canvas.Top="204">
+                <Button x:Name="Pokemon1_Target" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Click="Pokemon1_Target_Click"/>
+                <Button x:Name="Pokemon2_Target" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Click="Pokemon2_Target_Click"/>
+            </WrapPanel>
+            <Button x:Name="PotionUse" Content="PotionUse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Height="54" FontSize="24" Click="PotionUse_Click" Canvas.Left="637" Canvas.Top="59" Visibility="Hidden"/>
+        </Canvas>
+
+    </Grid>
+</Window>

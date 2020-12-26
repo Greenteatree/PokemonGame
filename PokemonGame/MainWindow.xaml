@@ -1,0 +1,20 @@
+﻿<Window x:Class="PokemonGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" KeyDown="KeyDown1">
+    <Grid >
+        <Canvas HorizontalAlignment="Left" Height="356" Margin="161,32,0,0" VerticalAlignment="Top" Width="432"  Focusable="True">
+            <Image x:Name="mapimg" Height="356" Width="422" Source="/Image/mapimg.png"/>
+            <Image x:Name="playerimg" Height="30" Canvas.Left="176" Canvas.Top="288" Width="30" Source="/Image/playerimg.png" />
+            <Button x:Name="SercetGift" Content="SercetGift" Width="75" Canvas.Left="79" Canvas.Top="222" Background="#FFF33131" Click="SercetGift_Click" Visibility="Hidden" />
+        </Canvas>
+        <TextBlock x:Name="ShowLocation" HorizontalAlignment="Left" Margin="652,95,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Button x:Name="ManageButton" Content="Manage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="574,32,0,0" Height="50" Click="ManageButton_Click" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="{x:Null}"/>
+        <Button x:Name="Test" Content="Click here &#xD;&#xA;to get a test&#xD;&#xA; pokemon!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="10,149,0,0" Height="126" FontSize="24" Click="Test_Click"/>
+        <Button Content="Click here &#xA;to get a test&#xA; potion!" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="10,48,0,0" Height="101" FontSize="24" Click="PotionTest_Click"/>
+    </Grid>
+</Window>
